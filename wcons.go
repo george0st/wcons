@@ -24,6 +24,9 @@ import (
 // 	go get github.com/gocolly/colly/v2
 
 func main() {
+
+	// TODO: add command line parsing
+
 	// Instantiate default collector
 	c := colly.NewCollector(
 		// Visit only domains: hackerspaces.org, wiki.hackerspaces.org
