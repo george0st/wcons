@@ -40,8 +40,8 @@ func main() {
 	fmt.Println("Visit:", *visitPtr)
 	fmt.Println("Allow domain:", *allowPtr)
 
-	str1 := strings.Split((*allowPtr), ",")
-	fmt.Println("ss:", str1)
+	allowList := strings.Split((*allowPtr), ",")
+	fmt.Println("ss:", allowList)
 
 	fmt.Println("=====================================", *allowPtr)
 
