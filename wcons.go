@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"strings"
 
 	"github.com/gocolly/colly/v2"
 )
@@ -38,8 +39,13 @@ func main() {
 	fmt.Println("Run setting:")
 	fmt.Println("Visit:", *visitPtr)
 	fmt.Println("Allow domain:", *allowPtr)
+
+	str1 := strings.Split((*allowPtr), ",")
+	fmt.Println("ss:", str1)
+
 	fmt.Println("=====================================", *allowPtr)
 
+	return
 	c := colly.NewCollector(
 		// visit only domains: hackerspaces.org, wiki.hackerspaces.org
 		colly.AllowedDomains(*allowPtr),

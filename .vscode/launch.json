@@ -17,7 +17,7 @@
             "env": {},
             "args": [
                 "-visit", "https://www.google.com/",
-                "-allow", "www.google.com"
+                "-allow", "www.google.com,google.com"
             ]
         }
     ]
