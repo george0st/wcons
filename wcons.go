@@ -45,10 +45,10 @@ func main() {
 
 	fmt.Println("=====================================", *allowPtr)
 
-	return
+	// sample from https://go-colly.org/docs/examples/basic/
 	c := colly.NewCollector(
 		// visit only domains: hackerspaces.org, wiki.hackerspaces.org
-		colly.AllowedDomains(*allowPtr),
+		colly.AllowedDomains(allowList...),
 	)
 
 	// on every a element which has href attribute call callback
