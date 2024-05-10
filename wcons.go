@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"strings"
 
 	"github.com/gocolly/colly/v2"
 )
@@ -32,17 +33,20 @@ func main() {
 
 	// define parameters
 	visitPtr := flag.String("visit", "https://www.google.com/", "Requested URL for processing")
-	allowPtr := flag.String("allow", "", "Allow domains, white lists, e.g. 'google.com,...'")
+	allowPtr := flag.String("allow", "", "Allow domains, white lists, e.g. 'www.google.com,google.com,...'")
 	flag.Parse()
+
+	allowList := strings.Split((*allowPtr), ",")
 
 	fmt.Println("Run setting:")
 	fmt.Println("Visit:", *visitPtr)
-	fmt.Println("Allow domain:", *allowPtr)
+	fmt.Println("Allow domain(s):", allowList)
 	fmt.Println("=====================================", *allowPtr)
 
+	// sample from https://go-colly.org/docs/examples/basic/
 	c := colly.NewCollector(
 		// visit only domains: hackerspaces.org, wiki.hackerspaces.org
-		colly.AllowedDomains(*allowPtr),
+		colly.AllowedDomains(allowList...),
 	)
 
 	// on every a element which has href attribute call callback
