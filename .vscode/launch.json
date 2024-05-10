@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+        
+    // Addition samples: https://vscode-debug-specs.github.io/go/
+    // https://gist.github.com/lawrencegripper/43f4bd28061181a593b0a08f348f2cef
+    // https://blog.gripdev.xyz/2017/11/01/pass-arguments-to-golang-program-when-debugging-with-vscode/
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${fileDirname}",
+            "env": {},
+            "args": [
+                "-visit", "https://www.google.com/",
+                "-allow", "www.google.com"
+            ]
+        }
+    ]
+}
